@@ -1,10 +1,10 @@
 * {
     box-sizing: border-box;
-    font-family: sans-serif;
 }
 
 html {
     --mainColor: #2196f3;
+    --formWidth: 390px;
     background-color: var(--mainColor);
     height: 100vh;
     display: flex;
@@ -12,9 +12,37 @@ html {
     align-items: center;
 }
 
+html:has(option[value="1"]:checked) {
+    font-family: "Open Sans", sans-serif;
+}
+
+html:has(option[value="2"]:checked) {
+    font-family: "Metal Mania", system-ui;
+}
+
+html:has(option[value="3"]:checked) {
+    font-family: "Caesar Dressing", system-ui;
+}
+
+::placeholder {
+    font-family: inherit;
+}
+
+select {
+    width: var(--formWidth);
+    height: 40px;
+    font-size: 19px;
+    font-family: inherit;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
 form {
     background-color: white;
-    width: 390px;
+    width: var(--formWidth);
     /* height: 600px; */
     /* height: 660px; */
     border-radius: 5px;
@@ -75,6 +103,7 @@ div:nth-of-type(4)::after {
 input {
     width: 100%;
     font-size: inherit;
+    font-family: inherit;
     border: none;
     outline: none;
     caret-color: var(--mainColor);
